@@ -1,7 +1,14 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import { TickerBanner } from '../components/TickerBanner';
 
 export function PoliciesPage() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }, []);
+
   return (
     <div className="min-h-screen bg-black text-white">
       <TickerBanner />
