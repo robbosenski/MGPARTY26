@@ -27,7 +27,7 @@ export default function App() {
             backgroundRepeat: 'no-repeat',
           }}
         />
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/5" />
         <div className="relative">
           <About onJoinClick={scrollToSignup} />
           <SignupForm />
