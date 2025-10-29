@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef, useState } from 'react';
+import { getSupabaseClient } from '../lib/supabaseClient';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Checkbox } from './ui/checkbox';
@@ -19,13 +20,54 @@ export function SignupForm() {
     smsOptIn: false,
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Mock submission
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    setIsSubmitting(true);
+    setErrorMessage(null);
+    setSubmitted(false);
+
+    try {
+      const supabase = getSupabaseClient();
+      const tableName = import.meta.env.VITE_SUPABASE_TABLE || 'signups';
+
+      const { error } = await supabase.from(tableName).insert([
+        {
+          first_name: formData.firstName.trim(),
+          last_name: formData.lastName.trim(),
+          email: formData.email.toLowerCase().trim(),
+          phone_country: formData.phoneCountry,
+          phone_number: formData.phoneNumber.trim() || null,
+          email_opt_in: formData.updates,
+          sms_opt_in: formData.smsOptIn,
+          submitted_at: new Date().toISOString(),
+        },
+      ]);
+
+      if (error) {
+        throw error;
+      }
+
+      setSubmitted(true);
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phoneCountry: '+61',
+        phoneNumber: '',
+        updates: false,
+        smsOptIn: false,
+      });
+
+      setTimeout(() => setSubmitted(false), 4000);
+    } catch (err) {
+      console.error('Failed to submit form', err);
+      setErrorMessage('Something went wrong saving your details. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -56,6 +98,11 @@ export function SignupForm() {
           onSubmit={handleSubmit}
           className="space-y-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12"
         >
+          {errorMessage && (
+            <div className="rounded-xl border border-pink-500/40 bg-pink-500/10 px-4 py-3 text-sm text-pink-100">
+              {errorMessage}
+            </div>
+          )}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="first-name" className="text-white/90">
@@ -174,8 +221,9 @@ export function SignupForm() {
             type="submit"
             size="lg"
             className="w-full bg-[#d900ed] hover:bg-[#e238ff] text-white py-6 text-lg transition-all duration-300 transform hover:scale-[1.02]"
+            disabled={isSubmitting}
           >
-            {submitted ? '✓ You\'re in!' : 'Count me in'}
+            {isSubmitting ? 'Sending…' : submitted ? '✓ You\'re in!' : 'Count me in'}
           </Button>
         </motion.form>
       </div>
