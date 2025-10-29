@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { getSupabaseClient } from '../lib/supabaseClient';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -196,7 +197,11 @@ export function SignupForm() {
                 htmlFor="updates"
                 className="text-white/70 cursor-pointer leading-relaxed"
               >
-                By signing up to hear more from Mardi Gras Party, I acknowledge I've read the Privacy Policy and am happy to be contacted by Bizarro, Sydney Gay & Lesbian Mardi Gras & their affiliates about their events via email
+                By signing up to hear more from Mardi Gras Party, I acknowledge I've read the{' '}
+                <Link to="/policies" className="underline text-pink-300 hover:text-pink-200">
+                  Privacy Policy
+                </Link>{' '}
+                and am happy to be contacted by Bizarro, Sydney Gay &amp; Lesbian Mardi Gras &amp; their affiliates about their events via email
               </Label>
             </div>
             <div className="flex items-start space-x-3">
