@@ -10,9 +10,11 @@ export function SignupForm() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
-    phone: '',
+    phoneCountry: '+61',
+    phoneNumber: '',
     updates: false,
     smsOptIn: false,
   });
@@ -54,19 +56,35 @@ export function SignupForm() {
           onSubmit={handleSubmit}
           className="space-y-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12"
         >
-          <div className="space-y-2">
-            <Label htmlFor="name" className="text-white/90">
-              Name
-            </Label>
-            <Input
-              id="name"
-              type="text"
-              required
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-pink-500 focus:ring-pink-500/20"
-              placeholder="Your name"
-            />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="first-name" className="text-white/90">
+                First name
+              </Label>
+              <Input
+                id="first-name"
+                type="text"
+                required
+                value={formData.firstName}
+                onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-pink-500 focus:ring-pink-500/20"
+                placeholder="Your first name"
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="last-name" className="text-white/90">
+                Last name
+              </Label>
+              <Input
+                id="last-name"
+                type="text"
+                required
+                value={formData.lastName}
+                onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-pink-500 focus:ring-pink-500/20"
+                placeholder="Your last name"
+              />
+            </div>
           </div>
 
           <div className="space-y-2">
@@ -87,14 +105,31 @@ export function SignupForm() {
             <Label htmlFor="phone" className="text-white/90">
               Mobile (optional)
             </Label>
-            <Input
-              id="phone"
-              type="tel"
-              value={formData.phone}
-              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              className="bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-pink-500 focus:ring-pink-500/20"
-              placeholder="e.g. +61 4xx xxx xxx"
-            />
+            <div className="grid grid-cols-[110px_1fr] gap-3">
+              <div className="space-y-1">
+                <Label htmlFor="phone-country" className="sr-only">Country code</Label>
+                <select
+                  id="phone-country"
+                  value={formData.phoneCountry}
+                  onChange={(e) => setFormData({ ...formData, phoneCountry: e.target.value })}
+                  className="w-full bg-white/10 border border-white/20 text-white rounded-md px-3 py-3 focus:border-pink-500 focus:ring-pink-500/20 text-sm"
+                >
+                  <option value="+61">+61 (AU)</option>
+                  <option value="+64">+64 (NZ)</option>
+                  <option value="+65">+65 (SG)</option>
+                  <option value="+1">+1 (US)</option>
+                  <option value="+44">+44 (UK)</option>
+                </select>
+              </div>
+              <Input
+                id="phone"
+                type="tel"
+                value={formData.phoneNumber}
+                onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-pink-500 focus:ring-pink-500/20"
+                placeholder="e.g. 4xx xxx xxx"
+              />
+            </div>
           </div>
 
           <div className="flex flex-col gap-4 pt-2">
