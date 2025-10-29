@@ -4,6 +4,8 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "types": ["node"]
   },
   "include": ["vite.config.ts"]
