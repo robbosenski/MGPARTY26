@@ -53,7 +53,7 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-8">
             <button
               onClick={() => scrollToSection('about')}
-              className="text-white/80 hover:text-pink-400 transition-colors duration-300"
+              className="text-white hover:text-pink-300 transition-colors duration-300"
             >
               About
             </button>
@@ -88,7 +88,7 @@ export function Navbar() {
             >
               <button
                 onClick={() => scrollToSection('about')}
-                className="block w-full text-left text-white/80 hover:text-pink-400 transition-colors duration-300 py-2"
+                className="block w-full text-left text-white hover:text-pink-300 transition-colors duration-300 py-2"
               >
                 About
               </button>
