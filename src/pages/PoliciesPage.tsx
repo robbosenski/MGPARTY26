@@ -25,21 +25,21 @@ export function PoliciesPage() {
           <ul className="space-y-3 text-lg leading-relaxed">
             <li>
               Please find the PDF version of our policy{' '}
-              <a href="#" className="text-pink-300 underline hover:text-pink-200" target="_blank" rel="noreferrer">
+              <a href="/files/bizarro_privacy_policy.pdf" className="text-pink-300 underline hover:text-pink-200" target="_blank" rel="noreferrer">
                 here
               </a>
               .
             </li>
             <li>
               Please find our cookie policy{' '}
-              <a href="#" className="text-pink-300 underline hover:text-pink-200" target="_blank" rel="noreferrer">
+              <a href="/files/bizarro_cookie_policy.pdf" className="text-pink-300 underline hover:text-pink-200" target="_blank" rel="noreferrer">
                 here
               </a>
               .
             </li>
             <li>
               Please find our event Ticketing Terms &amp; Conditions{' '}
-              <a href="#" className="text-pink-300 underline hover:text-pink-200" target="_blank" rel="noreferrer">
+              <a href="/files/bizarro_ticket_terms.pdf" className="text-pink-300 underline hover:text-pink-200" target="_blank" rel="noreferrer">
                 here
               </a>
               .
