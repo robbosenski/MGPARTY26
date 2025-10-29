@@ -24,7 +24,7 @@ export function About({ onJoinClick }: AboutProps) {
           transition={{ duration: 0.8 }}
           className="text-white mb-12"
         >
-          PARTY is back...
+          Let the rumours begin...
         </motion.h2>
 
         <motion.p

@@ -60,7 +60,7 @@ export function Hero({ onSignupClick }: HeroProps) {
               transition={{ duration: 0.9, delay: 0.2 }}
               className="text-white text-[clamp(1.1rem,5.4vw,2rem)] md:text-[clamp(1.7rem,2.8vw,2.4rem)] font-semibold tracking-[0.002em] uppercase leading-[0.9] whitespace-nowrap"
             >
-              MARDI GRAS PARTY RETURNS
+              MARDI GRAS PARTY
             </motion.h1>
 
             <motion.p
