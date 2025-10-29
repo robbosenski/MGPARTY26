@@ -11,7 +11,7 @@ export function Footer() {
 
           <div className="flex items-center gap-6">
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/sydneymardigras/?hl=en"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/60 hover:text-pink-500 transition-colors duration-300"
@@ -20,7 +20,7 @@ export function Footer() {
               <Instagram size={24} />
             </a>
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/sydneymardigras/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/60 hover:text-pink-500 transition-colors duration-300"
@@ -29,7 +29,7 @@ export function Footer() {
               <Facebook size={24} />
             </a>
             <a
-              href="https://youtube.com"
+              href="https://www.youtube.com/c/SydneyMardiGras"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/60 hover:text-pink-500 transition-colors duration-300"

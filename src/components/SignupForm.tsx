@@ -193,16 +193,16 @@ export function SignupForm() {
                 required
               />
               <span className="text-pink-300 mt-1" aria-hidden="true">*</span>
-              <Label
-                htmlFor="updates"
-                className="text-white/70 cursor-pointer leading-relaxed"
-              >
+              <p className="text-white/70 leading-relaxed">
                 By signing up to hear more from Mardi Gras Party, I acknowledge I've read the{' '}
-                <Link to="/policies" className="underline text-pink-300 hover:text-pink-200">
-                  Privacy Policy
+                <Link
+                  to="/policies"
+                  className="underline underline-offset-4 decoration-pink-300 hover:decoration-pink-200 transition-colors"
+                >
+                  privacy policy
                 </Link>{' '}
                 and am happy to be contacted by Bizarro, Sydney Gay &amp; Lesbian Mardi Gras &amp; their affiliates about their events via email
-              </Label>
+              </p>
             </div>
             <div className="flex items-start space-x-3">
               <Checkbox
