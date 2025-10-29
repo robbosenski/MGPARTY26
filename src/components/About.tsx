@@ -22,9 +22,9 @@ export function About({ onJoinClick }: AboutProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-white mb-12"
+          className="text-white text-xl md:text-2xl leading-relaxed mb-6 uppercase tracking-[0.15em]"
         >
-          Let the rumours begin...
+          LET THE RUMOURS BEGIN
         </motion.h2>
 
         <motion.p

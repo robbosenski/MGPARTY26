@@ -12,7 +12,9 @@ export function SignupForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     updates: false,
+    smsOptIn: false,
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -81,22 +83,54 @@ export function SignupForm() {
               placeholder="your@email.com"
             />
           </div>
-
-          <div className="flex items-start space-x-3 pt-2">
-            <Checkbox
-              id="updates"
-              checked={formData.updates}
-              onCheckedChange={(checked) =>
-                setFormData({ ...formData, updates: checked as boolean })
-              }
-              className="border-white/30 data-[state=checked]:bg-pink-600 data-[state=checked]:border-pink-600 mt-1"
-            />
-            <Label
-              htmlFor="updates"
-              className="text-white/70 cursor-pointer leading-relaxed"
-            >
-              Keep me updated on other Mardi Gras events
+          <div className="space-y-2">
+            <Label htmlFor="phone" className="text-white/90">
+              Mobile (optional)
             </Label>
+            <Input
+              id="phone"
+              type="tel"
+              value={formData.phone}
+              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+              className="bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-pink-500 focus:ring-pink-500/20"
+              placeholder="e.g. +61 4xx xxx xxx"
+            />
+          </div>
+
+          <div className="flex flex-col gap-4 pt-2">
+            <div className="flex items-start space-x-3">
+              <Checkbox
+                id="updates"
+                checked={formData.updates}
+                onCheckedChange={(checked) =>
+                  setFormData({ ...formData, updates: checked as boolean })
+                }
+                className="border-white/30 data-[state=checked]:bg-pink-600 data-[state=checked]:border-pink-600 mt-1"
+                required
+              />
+              <Label
+                htmlFor="updates"
+                className="text-white/70 cursor-pointer leading-relaxed"
+              >
+                By signing up to hear more from Mardi Gras Party, I acknowledge I've read the Privacy Policy and am happy to be contacted by Bizarro, Sydney Gay & Lesbian Mardi Gras & their affiliates about their events via email
+              </Label>
+            </div>
+            <div className="flex items-start space-x-3">
+              <Checkbox
+                id="sms-opt-in"
+                checked={formData.smsOptIn}
+                onCheckedChange={(checked) =>
+                  setFormData({ ...formData, smsOptIn: checked as boolean })
+                }
+                className="border-white/30 data-[state=checked]:bg-pink-600 data-[state=checked]:border-pink-600 mt-1"
+              />
+              <Label
+                htmlFor="sms-opt-in"
+                className="text-white/70 cursor-pointer leading-relaxed"
+              >
+                I am happy to receive exciting texts about Mardi Gras Party from Bizarro via SMS
+              </Label>
+            </div>
           </div>
 
           <Button
