@@ -1,0 +1,20 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path
+    d="M24 4L6 14V34L24 44L42 34V14L24 4Z"
+    fill="url(#gradient1)"
+  />
+  <path
+    d="M24 12L14 18V30L24 36L34 30V18L24 12Z"
+    fill="url(#gradient2)"
+  />
+  <defs>
+    <linearGradient id="gradient1" x1="6" y1="4" x2="42" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stopColor="#EC4899" />
+      <stop offset="1" stopColor="#A855F7" />
+    </linearGradient>
+    <linearGradient id="gradient2" x1="14" y1="12" x2="34" y2="36" gradientUnits="userSpaceOnUse">
+      <stop stopColor="#F9A8D4" />
+      <stop offset="1" stopColor="#C084FC" />
+    </linearGradient>
+  </defs>
+</svg>

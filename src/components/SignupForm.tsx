@@ -1,0 +1,113 @@
+import { motion } from 'motion/react';
+import { useInView } from 'motion/react';
+import { useRef, useState } from 'react';
+import { Button } from './ui/button';
+import { Input } from './ui/input';
+import { Checkbox } from './ui/checkbox';
+import { Label } from './ui/label';
+
+export function SignupForm() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    updates: false,
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Mock submission
+    console.log('Form submitted:', formData);
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 3000);
+  };
+
+  return (
+    <section
+      ref={ref}
+      id="signup"
+      className="relative py-32 px-6"
+    >
+      <div className="relative z-10 max-w-2xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-white mb-6">
+            Be the first to know.
+          </h2>
+          <p className="text-white/70 text-lg md:text-xl max-w-xl mx-auto">
+            Sign up for updates, pre-sale access and behind-the-scenes news as we prepare for the next era of Mardi Gras PARTY.
+          </p>
+        </motion.div>
+
+        <motion.form
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          onSubmit={handleSubmit}
+          className="space-y-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12"
+        >
+          <div className="space-y-2">
+            <Label htmlFor="name" className="text-white/90">
+              Name
+            </Label>
+            <Input
+              id="name"
+              type="text"
+              required
+              value={formData.name}
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              className="bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-pink-500 focus:ring-pink-500/20"
+              placeholder="Your name"
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="email" className="text-white/90">
+              Email
+            </Label>
+            <Input
+              id="email"
+              type="email"
+              required
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              className="bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-pink-500 focus:ring-pink-500/20"
+              placeholder="your@email.com"
+            />
+          </div>
+
+          <div className="flex items-start space-x-3 pt-2">
+            <Checkbox
+              id="updates"
+              checked={formData.updates}
+              onCheckedChange={(checked) =>
+                setFormData({ ...formData, updates: checked as boolean })
+              }
+              className="border-white/30 data-[state=checked]:bg-pink-600 data-[state=checked]:border-pink-600 mt-1"
+            />
+            <Label
+              htmlFor="updates"
+              className="text-white/70 cursor-pointer leading-relaxed"
+            >
+              Keep me updated on other Mardi Gras events
+            </Label>
+          </div>
+
+          <Button
+            type="submit"
+            size="lg"
+            className="w-full bg-[#d900ed] hover:bg-[#e238ff] text-white py-6 text-lg transition-all duration-300 transform hover:scale-[1.02]"
+          >
+            {submitted ? '✓ You\'re in!' : 'Count me in'}
+          </Button>
+        </motion.form>
+      </div>
+    </section>
+  );
+}

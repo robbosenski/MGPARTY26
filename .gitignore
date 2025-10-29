@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.DS_Store
+.env
+.vercel
+npm-debug.log*
+.yarn*
+.pnpm-store/
+.idea/
+.vscode/
+*.log
