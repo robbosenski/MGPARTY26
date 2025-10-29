@@ -105,8 +105,8 @@ export function SignupForm() {
             <Label htmlFor="phone" className="text-white/90">
               Mobile (optional)
             </Label>
-            <div className="grid grid-cols-[110px_1fr] gap-3">
-              <div className="space-y-1">
+            <div className="grid grid-cols-[110px_1fr] gap-3 items-center">
+              <div>
                 <Label htmlFor="phone-country" className="sr-only">Country code</Label>
                 <select
                   id="phone-country"
@@ -126,7 +126,7 @@ export function SignupForm() {
                 type="tel"
                 value={formData.phoneNumber}
                 onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-pink-500 focus:ring-pink-500/20 h-11"
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-pink-500 focus:ring-pink-500/20 h-11 text-sm"
                 pattern="^[0-9\s()+-]{6,}$"
                 inputMode="tel"
               />
@@ -134,7 +134,7 @@ export function SignupForm() {
           </div>
 
           <div className="flex flex-col gap-4 pt-2">
-            <div className="flex items-start space-x-3">
+            <div className="flex items-start gap-2">
               <Checkbox
                 id="updates"
                 checked={formData.updates}
@@ -144,13 +144,13 @@ export function SignupForm() {
                 className="border-white/30 data-[state=checked]:bg-pink-600 data-[state=checked]:border-pink-600 mt-1"
                 required
               />
+              <span className="text-pink-300 mt-1" aria-hidden="true">*</span>
               <Label
                 htmlFor="updates"
                 className="text-white/70 cursor-pointer leading-relaxed"
               >
-                By signing up to hear more from Mardi Gras Party, I acknowledge I've read the Privacy Policy and am happy to be contacted by Bizarro, Sydney Gay & Lesbian Mardi Gras & their affiliates about their events via email <span className="text-pink-300">*</span> <span className="text-pink-300">*</span>
+                By signing up to hear more from Mardi Gras Party, I acknowledge I've read the Privacy Policy and am happy to be contacted by Bizarro, Sydney Gay & Lesbian Mardi Gras & their affiliates about their events via email
               </Label>
-              <span className="text-pink-300" aria-hidden="true">*</span>
             </div>
             <div className="flex items-start space-x-3">
               <Checkbox
