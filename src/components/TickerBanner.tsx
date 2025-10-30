@@ -1,5 +1,5 @@
 export function TickerBanner() {
-  const message = "MARDI GRAS PARTY RETURNS. FEB 28 2026.";
+  const message = "MARDI GRAS PARTY RETURNS. 28 FEB 2026.";
   
   // Repeat the message multiple times for seamless scrolling
   const items = Array(20).fill(message);
@@ -40,12 +40,20 @@ export function TickerBanner() {
         <div className="overflow-hidden h-full">
           <div className="ticker-content h-full">
             {items.map((item, index) => (
-              <div key={index} className="inline-flex items-center gap-4 px-4 flex-shrink-0 h-full">
-                <span className="text-white font-semibold whitespace-nowrap">{item}</span>
+              <div
+                key={index}
+                className="inline-flex items-center flex-shrink-0 h-full"
+              >
+                <span
+                  className="text-white whitespace-nowrap uppercase"
+                  style={{ fontFamily: '"Freigeist", sans-serif', fontWeight: 700 }}
+                >
+                  {item}
+                </span>
                 <img
                   src="/logos/MG26_Logo_White%20Icon.svg"
                   alt="MG26 icon"
-                  className="h-6 w-auto flex-shrink-0"
+                  className="h-6 w-auto flex-shrink-0 mx-6"
                 />
               </div>
             ))}

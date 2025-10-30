@@ -22,7 +22,7 @@ export function About({ onJoinClick }: AboutProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-white text-xl md:text-2xl leading-relaxed mb-6 uppercase tracking-[0.15em]"
+          className="text-white text-2xl md:text-3xl leading-tight mb-6 uppercase tracking-[-0.03em] font-black"
         >
           LET THE RUMOURS BEGIN
         </motion.h2>
@@ -31,7 +31,8 @@ export function About({ onJoinClick }: AboutProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-white/80 text-xl md:text-2xl leading-relaxed mb-12 max-w-3xl mx-auto"
+          className="text-white text-xl md:text-2xl leading-relaxed mb-12 max-w-3xl mx-auto"
+          style={{ fontFeatureSettings: '"ss01" 1' }}
         >
           For over four decades, Mardi Gras PARTY has been the night that brings us together - a celebration of freedom, connection and pure release. In 2026, it returns renewed and reimagined: bigger in spirit, bolder in sound, and brighter in every sense.
         </motion.p>
@@ -44,10 +45,9 @@ export function About({ onJoinClick }: AboutProps) {
           <Button
             onClick={onJoinClick}
             size="lg"
-            variant="outline"
-            className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 px-10 py-6 text-lg transition-all duration-300"
+            className="bg-[#d900ed] hover:bg-[#e238ff] text-white px-10 py-6 text-lg transition-all duration-300 uppercase tracking-[0.08em] font-bold border border-transparent"
           >
-            Stay Updated
+            STAY UPDATED
           </Button>
         </motion.div>
       </div>

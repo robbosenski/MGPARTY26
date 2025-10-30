@@ -69,7 +69,7 @@ export function Hero({ onSignupClick }: HeroProps) {
               transition={{ duration: 0.9, delay: 0.3 }}
               className="text-white text-[clamp(1.2rem,5.6vw,2.1rem)] md:text-[clamp(1.8rem,2.8vw,2.6rem)] font-semibold tracking-[0.001em] uppercase leading-[0.9]"
             >
-              FEB 28 2026
+              28 FEB 2026
             </motion.p>
           </div>
 
@@ -81,9 +81,9 @@ export function Hero({ onSignupClick }: HeroProps) {
             <Button
               onClick={onSignupClick}
               size="lg"
-              className="bg-[#d900ed] hover:bg-[#e238ff] text-white px-6 py-3 sm:px-10 sm:py-5 text-sm sm:text-lg transition-all duration-300 transform hover:scale-105"
+              className="bg-[#d900ed] hover:bg-[#e238ff] text-white px-6 py-3 sm:px-10 sm:py-5 text-sm sm:text-lg transition-all duration-300 transform hover:scale-105 uppercase tracking-[0.08em] font-bold"
             >
-              Stay in the loop
+              STAY IN THE LOOP
             </Button>
           </motion.div>
         </div>

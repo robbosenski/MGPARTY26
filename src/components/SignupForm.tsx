@@ -84,10 +84,10 @@ export function SignupForm() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-white mb-6">
-            Be the first to know.
+          <h2 className="text-white mb-6 uppercase font-bold tracking-[0.08em]">
+            BE THE FIRST TO KNOW
           </h2>
-          <p className="text-white/70 text-lg md:text-xl max-w-xl mx-auto">
+          <p className="text-white text-lg md:text-xl max-w-xl mx-auto" style={{ fontFeatureSettings: '"ss01" 1' }}>
             Sign up for updates, pre-sale access and behind-the-scenes news as we prepare for the next era of Mardi Gras PARTY.
           </p>
         </motion.div>
@@ -104,9 +104,9 @@ export function SignupForm() {
               {errorMessage}
             </div>
           )}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" style={{ fontFeatureSettings: '"ss01" 1' }}>
             <div className="space-y-2">
-              <Label htmlFor="first-name" className="text-white/90">
+              <Label htmlFor="first-name" className="text-white">
                 First name <span className="text-pink-300">*</span>
               </Label>
               <Input
@@ -120,7 +120,7 @@ export function SignupForm() {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="last-name" className="text-white/90">
+              <Label htmlFor="last-name" className="text-white">
                 Last name <span className="text-pink-300">*</span>
               </Label>
               <Input
@@ -136,7 +136,7 @@ export function SignupForm() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="email" className="text-white/90">
+            <Label htmlFor="email" className="text-white">
               Email<span className="text-pink-300">*</span>
             </Label>
             <Input
@@ -150,7 +150,7 @@ export function SignupForm() {
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="phone" className="text-white/90">
+            <Label htmlFor="phone" className="text-white">
               Mobile (optional)
             </Label>
             <div className="grid grid-cols-[110px_1fr] gap-3 items-center">
@@ -182,7 +182,7 @@ export function SignupForm() {
           </div>
 
           <div className="flex flex-col gap-4 pt-2">
-            <div className="flex items-start gap-2">
+            <div className="flex items-start gap-2" style={{ fontFeatureSettings: '"ss01" 1' }}>
               <Checkbox
                 id="updates"
                 checked={formData.updates}
@@ -193,7 +193,7 @@ export function SignupForm() {
                 required
               />
               <span className="text-pink-300 mt-1" aria-hidden="true">*</span>
-              <p className="text-white/70 leading-relaxed text-sm sm:text-base">
+              <p className="text-white leading-relaxed text-sm sm:text-base">
                 By signing up to hear more from Mardi Gras Party, I acknowledge I've read the{' '}
                 <Link
                   to="/policies"
@@ -204,7 +204,7 @@ export function SignupForm() {
                 and am happy to be contacted by Bizarro, Sydney Gay &amp; Lesbian Mardi Gras &amp; their affiliates about their events via email
               </p>
             </div>
-            <div className="flex items-start space-x-3">
+            <div className="flex items-start space-x-3" style={{ fontFeatureSettings: '"ss01" 1' }}>
               <Checkbox
                 id="sms-opt-in"
                 checked={formData.smsOptIn}
@@ -215,7 +215,7 @@ export function SignupForm() {
               />
               <Label
                 htmlFor="sms-opt-in"
-                className="text-white/70 cursor-pointer leading-relaxed text-sm sm:text-base"
+                className="text-white cursor-pointer leading-relaxed text-sm sm:text-base"
               >
                 I am happy to receive exciting texts about Mardi Gras Party from Bizarro via SMS
               </Label>
@@ -225,10 +225,10 @@ export function SignupForm() {
           <Button
             type="submit"
             size="lg"
-            className="w-full bg-[#d900ed] hover:bg-[#e238ff] text-white py-6 text-lg transition-all duration-300 transform hover:scale-[1.02]"
+            className="w-full bg-[#d900ed] hover:bg-[#e238ff] text-white py-6 text-lg transition-all duration-300 transform hover:scale-[1.02] uppercase tracking-[0.08em] font-bold"
             disabled={isSubmitting}
           >
-            {isSubmitting ? 'Sending…' : submitted ? '✓ You\'re in!' : 'Count me in'}
+            {isSubmitting ? 'SENDING…' : submitted ? '✓ YOU\'RE IN!' : 'COUNT ME IN'}
           </Button>
         </motion.form>
       </div>
