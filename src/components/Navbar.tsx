@@ -53,13 +53,13 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-8">
             <button
               onClick={() => scrollToSection('about')}
-              className="text-white hover:text-pink-300 transition-colors duration-300 uppercase tracking-[0.2em]"
+              className="text-white hover:text-pink-300 transition-colors duration-300 uppercase tracking-[0.03em]"
             >
               ABOUT
             </button>
             <button
               onClick={() => scrollToSection('signup')}
-              className="bg-white text-[#d900ed] hover:bg-white/90 px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105 border border-transparent uppercase tracking-[0.2em]"
+              className="bg-white text-[#d900ed] hover:bg-white/90 px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105 border border-transparent uppercase tracking-[0.03em]"
             >
               SIGN UP
             </button>
@@ -88,13 +88,13 @@ export function Navbar() {
             >
               <button
                 onClick={() => scrollToSection('about')}
-                className="block w-full text-left text-white hover:text-pink-300 transition-colors duration-300 py-2 uppercase tracking-[0.2em]"
+                className="block w-full text-left text-white hover:text-pink-300 transition-colors duration-300 py-2 uppercase tracking-[0.03em]"
               >
                 ABOUT
               </button>
               <button
                 onClick={() => scrollToSection('signup')}
-                className="w-full bg-white text-[#d900ed] hover:bg-white/90 px-6 py-3 rounded-full transition-all duration-300 border border-transparent uppercase tracking-[0.2em]"
+                className="w-full bg-white text-[#d900ed] hover:bg-white/90 px-6 py-3 rounded-full transition-all duration-300 border border-transparent uppercase tracking-[0.03em]"
               >
                 SIGN UP
               </button>
