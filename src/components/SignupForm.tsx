@@ -175,7 +175,7 @@ export function SignupForm() {
                 value={formData.phoneNumber}
                 onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
                 className="bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-pink-500 focus:ring-pink-500/20 h-11 text-sm"
-                pattern="^[0-9\s()+-]{6,}$"
+                pattern="^[0-9\s()+\-]{6,}$"
                 inputMode="tel"
               />
             </div>
