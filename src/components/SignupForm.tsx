@@ -193,7 +193,7 @@ export function SignupForm() {
                 required
               />
               <span className="text-pink-300 mt-1" aria-hidden="true">*</span>
-              <p className="text-white/70 leading-relaxed">
+              <p className="text-white/70 leading-relaxed text-sm sm:text-base">
                 By signing up to hear more from Mardi Gras Party, I acknowledge I've read the{' '}
                 <Link
                   to="/policies"
@@ -215,7 +215,7 @@ export function SignupForm() {
               />
               <Label
                 htmlFor="sms-opt-in"
-                className="text-white/70 cursor-pointer leading-relaxed"
+                className="text-white/70 cursor-pointer leading-relaxed text-sm sm:text-base"
               >
                 I am happy to receive exciting texts about Mardi Gras Party from Bizarro via SMS
               </Label>
