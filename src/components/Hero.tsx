@@ -92,7 +92,7 @@ export function Hero({ onSignupClick }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex-shrink-0 w-full"
+          className="flex-shrink-0 w-full md:hidden"
           style={{ paddingLeft: edgePadding, paddingRight: edgePadding, paddingBottom: bottomPadding }}
         >
           <img
