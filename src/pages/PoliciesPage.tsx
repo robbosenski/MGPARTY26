@@ -44,13 +44,6 @@ export function PoliciesPage() {
               </a>
               .
             </li>
-            <li>
-              Please find our event Ticketing Terms &amp; Conditions{' '}
-              <a href="/files/bizarro_ticket_terms.pdf" className="text-pink-300 underline hover:text-pink-200" target="_blank" rel="noreferrer">
-                here
-              </a>
-              .
-            </li>
           </ul>
         </section>
 
