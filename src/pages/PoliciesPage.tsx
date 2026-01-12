@@ -284,22 +284,11 @@ export function PoliciesPage() {
           <article className="space-y-4">
             <h2 className="text-2xl font-semibold text-white tracking-tight">Contact Us</h2>
             <p className="leading-relaxed">
-              We have a global privacy team in information-security and privacy that ensures end-to-end protection of your personal information throughout its lifecycle. If you have any questions about the above or our approach, our dedicated Privacy Office is here to help: <a href="mailto:hello@bizarro.com.au" className="text-pink-300 underline hover:text-pink-200">hello@bizarro.com.au</a>
+              We have a global privacy team in information-security and privacy that ensures end-to-end protection of your personal information throughout its lifecycle. If you have any questions about the above or our approach, our dedicated Privacy Office is here to help: <a href="mailto:hello@bizarro.life" className="text-pink-300 underline hover:text-pink-200">hello@bizarro.life</a>
             </p>
           </article>
         </section>
 
-        <section className="space-y-6 text-white/80 border-t border-white/10 pt-10">
-          <h2 className="text-2xl font-semibold text-white tracking-tight">Event Ticketing Terms &amp; Conditions</h2>
-          <p className="leading-relaxed">
-            [Insert the full Ticketing Terms &amp; Conditions text here with identical updates: replace “Kicks Entertainment” with “Bizarro”, replace “Live Nation Entertainment” or “Live Nation” with the relevant “Bizarro group of companies” or simply “Bizarro”, update contact email, update any references to ticketing agents, websites, etc.]
-          </p>
-
-          <h2 className="text-2xl font-semibold text-white tracking-tight">Camping Terms &amp; Conditions</h2>
-          <p className="leading-relaxed">
-            [Insert the full Camping Terms &amp; Conditions text here, making the same replacements: “Bizarro” for “Kicks Entertainment” or “Live Nation”, update any contact or branding references accordingly.]
-          </p>
-        </section>
       </main>
     </div>
   );
